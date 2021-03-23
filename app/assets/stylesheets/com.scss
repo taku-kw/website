@@ -1,9 +1,16 @@
 @charset "UTF-8";
 
+html {
+  width: 100%;
+  font-size: 62.5%;
+}
+
 .header {
+  height: 127px;
   background-color: cyan;
 }
 
 .footer {
+  height: 40px;
   background-color: chartreuse;
 }

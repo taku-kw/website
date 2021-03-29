@@ -9,7 +9,7 @@
   <div class='main-menu'>
     <div class='grid'>
       <% 16.times do |num| %>
-        <div class='item'><%= num %></div>
+        <%= link_to num, {method: 'post'}, {class: 'item'} %>
       <% end %>
     </div>
   </div>

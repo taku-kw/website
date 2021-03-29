@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.footer {
+  height: 40px;
+  background-color: chartreuse;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .copyright {
+    text-decoration: underline;
+  }
+
+}

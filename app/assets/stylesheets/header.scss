@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+.header {
+  height: 127px;
+  background-color: cyan;
+  position: relative;
+
+  .title {
+    font-size: 5rem;
+    position: absolute;
+    left: 20px;
+    top: 50px;
+  }
+
+  .login-btn {
+    position: absolute;
+    font-size: 1.25rem;
+    right: 20px;
+    top: 5px;
+    text-decoration: underline;
+  }
+
+  .nav {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    .nav-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-right: 50px;
+      width: 270px;
+      .nav-list-item {
+        font-size: 2rem;
+      }
+
+    }
+  }
+}

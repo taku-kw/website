@@ -1,3 +1,16 @@
 <div class='main'>
-  <h1>Hello</h1>
+  <div class='side-menu'>
+    <ul class='side-menu-list'>
+      <% 3.times do |num| %>
+        <li class='item'>menu<%= num %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='main-menu'>
+    <div class='grid'>
+      <% 16.times do |num| %>
+        <div class='item'><%= num %></div>
+      <% end %>
+    </div>
+  </div>
 </div>

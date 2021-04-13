@@ -8,7 +8,7 @@
     padding-bottom: 20px;
 
     .side-menu {
-      width: 20%;
+      width: 15%;
       background-color: rgb(255, 190, 200);
       text-align: center;
       .side-menu-list {
@@ -20,7 +20,7 @@
       }
     }
     .main-menu {
-      width : 75%;
+      width : 80%;
       background-color: rgb(255, 190, 200);
 
       .grid {
@@ -28,10 +28,26 @@
         display: grid;
         grid-auto-rows: 300px;
         grid-template-columns: repeat(auto-fit, 300px);
-        grid-gap: 20px;
+        grid-gap: 50px;
         justify-content: center;
         .item {
           background-color: rgb(255, 160, 160);
+          cursor: pointer;
+          border: 0px solid red;
+          transition: border 150ms;
+          &:hover {
+            border: 5px solid red;
+            transition: border 300ms;
+          }
+          .contents {
+            width: 100%;
+            height: 70%;
+          }
+          .describe {
+            width: 100%;
+            height: 30%;
+            background-color: white;
+          }
         }
       }
     }

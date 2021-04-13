@@ -36,7 +36,7 @@ $nav-height: 50px;
   }
 
   .title-fixed {
-    font-size: 2.0rem;
+    font-size: 2.8rem;
     position: fixed;
     top: ($nav-height / 2);
     transform: translateY(-50%);
@@ -46,16 +46,16 @@ $nav-height: 50px;
     position: absolute;
     top: 5px;
     right: 20px;
-    height: 20px;
+    height: 30px;
     width: 200px;
-    border-radius: 10px;
+    border-radius: 15px;
     background-color: blue;
     z-index: 2;
     display: flex;
     justify-content: space-around;
     align-items: center;
     .top-bar-btn {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       color: white;
       width: 60px;
       cursor: pointer;
@@ -73,7 +73,7 @@ $nav-height: 50px;
     position: fixed;
     top: ($nav-height / 2);
     transform: translateY(-50%);
-    right: 350px;
+    right: 400px;
   }
 
   .nav {
@@ -92,9 +92,9 @@ $nav-height: 50px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      width: 300px;
+      width: 350px;
       .nav-list-item {
-        font-size: 2rem;
+        font-size: 2.4rem;
         cursor: pointer;
         color: black;
         transition: color 250ms;

@@ -9,7 +9,10 @@
   <div class='main-menu'>
     <div class='grid'>
       <% 13.times do |num| %>
-        <%= link_to num, {method: 'post'}, {class: 'item'} %>
+        <div class='item'>
+          <div class='contents'></div>
+          <div class='describe'></div>
+        </div>
       <% end %>
     </div>
   </div>

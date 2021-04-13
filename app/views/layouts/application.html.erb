@@ -12,12 +12,17 @@
 
   <body>
     <header class='header'>
+      <div class='modal-area' id='modal-area' v-show='modalFlag' v-on:click.self='log_in_cancel()'>
+        <div class='modal'>
+          <button v-on:click='log_in_ok()'>login</button>
+        </div>
+      </div>
       <h1 class='title' id='title'>TITLE</h1>
       <div class='top-bar' id='top-bar'>
         <div class='top-bar-btn' v-show='!loginFlag' v-on:click='log_in()'>login</div>
+        <div class='top-bar-btn' v-show='!loginFlag'>signup</div>
+        <div class='top-bar-btn' v-show='loginFlag'>mypage</div>
         <div class='top-bar-btn' v-show='loginFlag'  v-on:click='log_out()'>logout</div>
-        <div class='top-bar-btn' v-show='!loginFlag' v-on:click='log_in()'>signup</div>
-        <div class='top-bar-btn' v-show='loginFlag'  v-on:click='log_out()'>mypage</div>
       </div>
       <nav class='nav' id='nav'>
         <ul class='nav-list'>

@@ -1,7 +1,10 @@
 @charset "UTF-8";
 
+$header-height: 120px;
+$nav-height: 50px;
+
 .header {
-  height: 127px;
+  height: $header-height;
   background-color: cyan;
   position: relative;
 
@@ -9,31 +12,85 @@
     font-size: 5rem;
     position: absolute;
     left: 20px;
-    top: 50px;
+    top: ($header-height / 2);
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
   }
 
-  .login-btn {
+  .title-fixed {
+    font-size: 2.0rem;
+    position: fixed;
+    top: ($nav-height / 2);
+    transform: translateY(-50%);
+  }
+
+  .top-bar {
     position: absolute;
-    font-size: 1.25rem;
-    right: 20px;
     top: 5px;
-    text-decoration: underline;
+    right: 20px;
+    height: 20px;
+    width: 200px;
+    border-radius: 10px;
+    background-color: blue;
+    z-index: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .top-bar-btn {
+      font-size: 1.6rem;
+      color: white;
+      width: 60px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      transition: color 250ms;
+      &:hover {
+        color: red;
+        transition: color 500ms;
+      }
+    }
+  }
+
+  .top-bar-fixed {
+    position: fixed;
+    top: ($nav-height / 2);
+    transform: translateY(-50%);
+    right: 350px;
   }
 
   .nav {
     position: absolute;
-    bottom: 0px;
-    right: 0px;
+    top: ($header-height - $nav-height);
+    height: $nav-height;
+    width: 100%;
+    background-color: cyan;
+    z-index: 1;
     .nav-list {
+      position: absolute;
+      top: ($nav-height / 2);
+      transform: translateY(-50%);
+      right: 0px;
+      padding-right: 20px;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      margin-right: 50px;
-      width: 270px;
+      width: 300px;
       .nav-list-item {
         font-size: 2rem;
+        cursor: pointer;
+        color: black;
+        transition: color 250ms;
+        &:hover {
+          color: red;
+          transition: color 500ms;
+        }
       }
-
     }
+  }
+
+  .nav-fixed {
+    position: fixed;
+    top: 0px;
   }
 }

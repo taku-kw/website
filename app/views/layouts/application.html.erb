@@ -12,13 +12,18 @@
 
   <body>
     <header class='header'>
-      <h1 class='title'>TITLE</h1>
-      <div class='login-btn'>login</div>
-      <nav class='nav'>
+      <h1 class='title' id='title'>TITLE</h1>
+      <div class='top-bar' id='top-bar'>
+        <div class='top-bar-btn' v-show='!loginFlag' v-on:click='log_in()'>login</div>
+        <div class='top-bar-btn' v-show='loginFlag'  v-on:click='log_out()'>logout</div>
+        <div class='top-bar-btn' v-show='!loginFlag' v-on:click='log_in()'>signup</div>
+        <div class='top-bar-btn' v-show='loginFlag'  v-on:click='log_out()'>mypage</div>
+      </div>
+      <nav class='nav' id='nav'>
         <ul class='nav-list'>
-          <li class='nav-list-item'>AAA</li>
-          <li class='nav-list-item'>BBB</li>
-          <li class='nav-list-item'>CCC</li>
+          <li class='nav-list-item'>TOP</li>
+          <li class='nav-list-item'>ABOUT</li>
+          <li class='nav-list-item'>CONTACT</li>
         </ul>
       </nav>
     </header>

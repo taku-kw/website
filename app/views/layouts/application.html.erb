@@ -16,7 +16,16 @@
     <header class='header'>
       <div class='modal-area' id='modal-area' v-show='modalFlag' v-on:click.self='log_in_cancel()'>
         <div class='modal'>
-          <button v-on:click='log_in_ok()'>login</button>
+          <%= form_with url: '#' do |form| %>
+            <div class='login-grid'>
+              <div><%= form.label :login_id, 'ID', class: 'item label' %></div>
+              <div><%= form.text_field :login_id, class: 'item input' %></div>
+              <div><%= form.label :login_password, 'Password', class: 'item label' %></div>
+              <div><%= form.password_field :login_password, class: 'item input' %></div>
+            </div>
+            <%= form.submit 'login', class: 'btn login-btn' %>
+          <% end %>
+          <button class='btn test-login-btn'>test_login</button>
         </div>
       </div>
       <h1 class='title' id='title'>TITLE</h1>

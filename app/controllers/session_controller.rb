@@ -1,10 +1,18 @@
 class SessionController < ApplicationController
-  def new
-  end
+  include SessionHelper
 
   def create
+    user = User.find_by(name: params[:name])
+    if user && user.authenticate(params[:login_password])
+      log_in user
+      render '/session/create_ok'
+    else
+      render '/session/create_ng'
+    end
   end
 
   def delete
+    log_out if logged_in?
+    render '/session/delete'
   end
 end

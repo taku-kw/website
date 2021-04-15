@@ -3,4 +3,7 @@ Rails.application.routes.draw do
   
   get '/songlist', to: 'songlist#index'
 
+  post   '/login',   to: 'session#create'
+  delete '/logout',  to: 'session#delete'
+ 
 end

@@ -4,8 +4,6 @@ new Vue ({
   el: '.header',
   data: {
     navTop: 0,
-    loginFlag: false,
-    modalFlag: false,
     modalScrollY: 0
   },
   mounted: function() {
@@ -31,32 +29,21 @@ new Vue ({
     },
     log_in() {
       this.modalScrollY = window.scrollY;
+      window.loginModalScrollY = window.scrollY;
       document.getElementById('modal-area').style.top = (this.modalScrollY + 'px');
-      this.modalFlag = true;
+      $('.modal-area').toggleClass('hidden');
       document.getElementsByTagName('html')[0].style.position = 'fixed';
       document.getElementsByTagName('html')[0].style.top = ((-this.modalScrollY) + 'px');
       document.getElementsByTagName('body')[0].style.position = 'fixed';
       document.getElementsByTagName('body')[0].style.top = ((-this.modalScrollY) + 'px');
     },
-    log_in_ok() {
-      this.modalFlag = false;
-      this.loginFlag = true;
-      document.getElementsByTagName('html')[0].style.position = '';
-      document.getElementsByTagName('html')[0].style.top = '';
-      document.getElementsByTagName('body')[0].style.position = '';
-      document.getElementsByTagName('body')[0].style.top = '';
-      window.scrollTo(0, this.modalScrollY);
-    },
     log_in_cancel() {
-      this.modalFlag = false;
+      $('.modal-area').toggleClass('hidden');
       document.getElementsByTagName('html')[0].style.position = '';
       document.getElementsByTagName('html')[0].style.top = '';
       document.getElementsByTagName('body')[0].style.position = '';
       document.getElementsByTagName('body')[0].style.top = '';
       window.scrollTo(0, this.modalScrollY);
     },
-    log_out() {
-      this.loginFlag = false;
-    }
   }
 });

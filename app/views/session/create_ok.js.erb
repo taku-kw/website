@@ -1,0 +1,9 @@
+$('.modal-area').toggleClass('hidden');
+document.getElementsByTagName('html')[0].style.position = '';
+document.getElementsByTagName('html')[0].style.top = '';
+document.getElementsByTagName('body')[0].style.position = '';
+document.getElementsByTagName('body')[0].style.top = '';
+window.scrollTo(0, window.loginModalScrollY);
+
+$('.top-bar').html("<%= escape_javascript(render('layouts/logged_in')) %>");
+

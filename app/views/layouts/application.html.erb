@@ -14,12 +14,12 @@
 
   <body>
     <header class='header'>
-      <div class='modal-area' id='modal-area' v-show='modalFlag' v-on:click.self='log_in_cancel()'>
+      <div class='modal-area hidden' id='modal-area' v-on:click.self='log_in_cancel()'>
         <div class='modal'>
-          <%= form_with url: '#' do |form| %>
+          <%= form_with url: '/login', data: {remote: true} do |form| %>
             <div class='login-grid'>
-              <div><%= form.label :login_id, 'ID', class: 'item label' %></div>
-              <div><%= form.text_field :login_id, class: 'item input' %></div>
+              <div><%= form.label :name, 'ID', class: 'item label' %></div>
+              <div><%= form.text_field :name, class: 'item input' %></div>
               <div><%= form.label :login_password, 'Password', class: 'item label' %></div>
               <div><%= form.password_field :login_password, class: 'item input' %></div>
             </div>
@@ -30,10 +30,11 @@
       </div>
       <h1 class='title' id='title'>TITLE</h1>
       <div class='top-bar' id='top-bar'>
-        <div class='top-bar-btn' v-show='!loginFlag' v-on:click='log_in()'>login</div>
-        <div class='top-bar-btn' v-show='!loginFlag'>signup</div>
-        <div class='top-bar-btn' v-show='loginFlag'>mypage</div>
-        <div class='top-bar-btn' v-show='loginFlag'  v-on:click='log_out()'>logout</div>
+        <% if logged_in? %>
+          <%= render 'layouts/logged_in' %>
+        <% else %>
+          <%= render 'layouts/not_logged_in' %>
+        <% end %>
       </div>
       <nav class='nav' id='nav'>
         <ul class='nav-list'>
@@ -49,6 +50,6 @@
     <footer class='footer'>
       <div class='copyright'>©hogehoge company</div>   
     </footer>
-  <%= javascript_pack_tag 'header' %>
+    <%= javascript_pack_tag 'header' %>    
   </body>
 </html>

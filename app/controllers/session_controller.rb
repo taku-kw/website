@@ -13,6 +13,6 @@ class SessionController < ApplicationController
 
   def delete
     log_out if logged_in?
-    render '/session/delete'
+    redirect_to '/songlist'
   end
 end

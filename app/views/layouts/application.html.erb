@@ -24,6 +24,7 @@
               <div><%= form.password_field :login_password, class: 'item input' %></div>
             </div>
             <%= form.submit 'login', class: 'btn login-btn' %>
+            <div class='login-fail'></div>
           <% end %>
           <button class='btn test-login-btn'>test_login</button>
         </div>

@@ -44,6 +44,7 @@ new Vue ({
       document.getElementsByTagName('body')[0].style.position = '';
       document.getElementsByTagName('body')[0].style.top = '';
       window.scrollTo(0, this.modalScrollY);
+      $('.login-fail').html('');
     },
   }
 });

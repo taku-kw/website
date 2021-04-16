@@ -18,15 +18,15 @@
         <div class='modal'>
           <%= form_with url: '/login', data: {remote: true} do |form| %>
             <div class='login-grid'>
-              <div><%= form.label :name, 'ID', class: 'item label' %></div>
-              <div><%= form.text_field :name, class: 'item input' %></div>
-              <div><%= form.label :login_password, 'Password', class: 'item label' %></div>
-              <div><%= form.password_field :login_password, class: 'item input' %></div>
+              <div class='item label'><div class='flex-label'><%= form.label :name, 'ID' %></div></div>
+              <div class='item input'><div class='flex-input'><%= form.text_field :name %></div></div>
+              <div class='item label'><div class='flex-label'><%= form.label :login_password, 'Password' %></div></div>
+              <div class='item input'><div class='flex-input'><%= form.password_field :login_password %></div></div>
             </div>
             <%= form.submit 'login', class: 'btn login-btn' %>
             <div class='login-fail'></div>
           <% end %>
-          <button class='btn test-login-btn'>test_login</button>
+          <button class='btn test-login-btn'>guest login</button>
         </div>
       </div>
       <h1 class='title' id='title'>TITLE</h1>

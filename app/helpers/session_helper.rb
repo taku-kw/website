@@ -11,6 +11,7 @@ module SessionHelper
       @current_user ||= User.find_by(id: session[:user_id])
     end
   end
+  
   #受け取ったユーザーがログイン中のユーザーと一致すればtrueを返す
   def current_user?(user)
     user == current_user

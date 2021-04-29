@@ -28,8 +28,8 @@
         display: grid;
         grid-auto-rows: 300px;
         grid-template-columns: repeat(auto-fit, 300px);
-        grid-gap: 50px;
-        justify-content: center;
+        row-gap: 50px;
+        justify-content: space-evenly;
         .item {
           background-color: rgb(255, 160, 160);
           cursor: pointer;
@@ -38,6 +38,9 @@
           &:hover {
             border: 5px solid red;
             transition: border 300ms;
+          }
+          &:active {
+            opacity: 0.7;
           }
           .contents {
             width: 100%;

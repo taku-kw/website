@@ -3,9 +3,33 @@
 $header-height: 120px;
 $nav-height: 50px;
 
+$header-color: hsl(0, 80%, 60%);
+$top-bar-color: hsl(0, 70%, 40%);
+$header-font-color: white;
+
+@mixin slideIn-underline()
+{
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: gray;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform .3s;
+}
+
+@mixin slideIn-underline-hover()
+{
+  transform: scale(1, 1);
+}
+
 .header {
   height: $header-height;
-  background-color: cyan;
+  background-color: $header-color;
+  color: $header-font-color;
   position: relative;
 
   .modal-area {
@@ -80,6 +104,7 @@ $nav-height: 50px;
         width: 120px;
         height: 35px;
         text-align: center;
+        color: black;
         background-color: hsl(0, 100%, 88%);
         &:hover {
           border: 3px solid red;
@@ -123,7 +148,7 @@ $nav-height: 50px;
   .title {
     font-size: 5rem;
     position: absolute;
-    left: 20px;
+    left: 80px;
     top: ($header-height / 2);
     transform: translateY(-50%);
     cursor: pointer;
@@ -144,7 +169,7 @@ $nav-height: 50px;
     height: 30px;
     width: 200px;
     border-radius: 15px;
-    background-color: blue;
+    background-color: $top-bar-color;
     z-index: 2;
     display: flex;
     justify-content: space-around;
@@ -157,9 +182,11 @@ $nav-height: 50px;
       text-align: center;
       font-weight: bold;
       transition: color 250ms;
+      position: relative;
       &:hover {
-        color: red;
-        transition: color 500ms;
+        background-color: gray;
+        border-radius: 1em;
+        transition: background-color 500ms;
       }
     }
   }
@@ -176,7 +203,7 @@ $nav-height: 50px;
     top: ($header-height - $nav-height);
     height: $nav-height;
     width: 100%;
-    background-color: cyan;
+    background-color: $header-color;
     z-index: 1;
     .nav-list {
       position: absolute;
@@ -191,11 +218,16 @@ $nav-height: 50px;
       .nav-list-item {
         font-size: 2.4rem;
         cursor: pointer;
-        color: black;
+        color: $header-font-color;
         transition: color 250ms;
-        &:hover {
-          color: red;
-          transition: color 500ms;
+        position: relative;
+        &:after {
+          @include slideIn-underline();
+        }
+        &:hover:after {
+          // color: red;
+          // transition: color 500ms;
+          @include slideIn-underline-hover();
         }
       }
     }

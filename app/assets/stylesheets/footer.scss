@@ -1,8 +1,10 @@
 @charset "UTF-8";
 
+$footer-color: hsl(0, 10%, 70%);
+
 .footer {
   height: 40px;
-  background-color: chartreuse;
+  background-color: $footer-color;
   display: flex;
   justify-content: center;
   align-items: center;

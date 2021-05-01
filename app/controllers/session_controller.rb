@@ -11,6 +11,10 @@ class SessionController < ApplicationController
     end
   end
 
+  def new
+
+  end
+
   def delete
     log_out if logged_in?
     redirect_to '/songlist'

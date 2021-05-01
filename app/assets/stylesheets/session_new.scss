@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
-@import "../com.scss";
+@import "./com.scss";
 
-.mypage_index {
+.session_new {
   height: calc(100vh - #{$header-height} - #{$footer-height}); 
   background-color: $main-color-light;
 }

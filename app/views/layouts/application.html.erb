@@ -39,9 +39,9 @@
       </div>
       <nav class='nav' id='nav'>
         <ul class='nav-list'>
-          <li class='nav-list-item'><a href='/songlist'>TOP</a></li>
-          <li class='nav-list-item'>ABOUT</li>
-          <li class='nav-list-item'>CONTACT</li>
+          <li class='nav-list-item'><%= link_to 'TOP', '/songlist' %></li>
+          <li class='nav-list-item'><%= link_to 'ABOUT', '/songlist/about' %></li>
+          <li class='nav-list-item'><%= link_to 'CONTACT', '/songlist/contact' %></li>
         </ul>
       </nav>
     </header>
@@ -49,7 +49,7 @@
       <%= yield %>
     </main>
     <footer class='footer'>
-      <div class='copyright'>©hogehoge company</div>   
+      <div class='copyright'>©copyright by hogehoge inc.</div>   
     </footer>
     <%= javascript_pack_tag 'header' %>    
   </body>

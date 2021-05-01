@@ -1,9 +1,11 @@
 @charset "UTF-8";
 
+@import 'com.scss';
+
 $footer-color: hsl(0, 10%, 70%);
 
 .footer {
-  height: 40px;
+  height: $footer-height;
   background-color: $footer-color;
   display: flex;
   justify-content: center;

@@ -1,2 +1,5 @@
+<div class='user-id'>
+  <%= session[:user_name] %>
+</div>
 <%= button_to 'logout', '/logout', {method: :delete, remote: true, class: 'top-bar-btn'} %>
 <%= button_to 'mypage', '/mypage', {method: :get, class: 'top-bar-btn'} %>

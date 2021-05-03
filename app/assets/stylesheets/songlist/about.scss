@@ -2,7 +2,42 @@
 
 @import "../com.scss";
 
+$title-area-height: 180px;
+$desc-area-height: 300px;
+
 .songlist_about {
   height: calc(100vh - #{$header-height} - #{$footer-height}); 
+  min-height: calc(#{$desc-area-height} + #{$title-area-height});
   background-color: $main-color-light;
+
+  .title-area {
+    width: 100%;
+    height: $title-area-height;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      border-bottom: 3px solid gray;
+    }
+  }
+
+  .desc-area {
+    width: 100%;
+    height: $desc-area-height;
+
+    display: flex;
+    justify-content: center;
+
+    .desc {
+      width: 70%;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+
+  }
 }

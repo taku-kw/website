@@ -1,2 +1,48 @@
-<h1>Hello New Session!</h1>
-<p>Sign Up</p>
+<div class='title-area'>
+  <p class='title'>SIGNUP</p>
+</div>
+<div class='form-area'>
+  <div class='form'>
+    <%= form_with url: '/signup_validate' do |form| %>
+      <table class='form-table'>
+        <tr>
+          <td class='label-area'><%= form.label :signup_id, 'ID', class: 'item' %></td>
+          <td class='input-area'>
+            <%= form.text_field :signup_id, {value: params[:signup_id], class: 'item input'} %>
+            <% if (!(@user.nil?) && @user.errors.include?(:name) ) %>
+              <span class='err-msg'><%= @user.errors.full_messages_for(:name).first %></span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td class='label-area'><%= form.label :signup_password, 'Password', class: 'item' %></td>
+          <td class='input-area'>
+            <%= form.password_field :signup_password, class: 'item input' %>
+            <% if (!(@user.nil?) && @user.errors.include?(:password_digest) ) %>
+              <span class='err-msg'><%= @user.errors.full_messages_for(:password_digest).first %></span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td class='label-area'><%= form.label :mail, 'Mail', class: 'item' %></td>
+          <td class='input-area'>
+            <%= form.email_field :mail, {value: params[:mail], class: 'item input'} %>
+            <% if (!(@user.nil?) && @user.errors.include?(:email) ) %>
+              <span class='err-msg'><%= @user.errors.full_messages_for(:email).first %></span>
+            <% end %>
+          </td>        
+        </tr>
+        <tr>
+          <td class='label-area'><%= form.label :age, 'Age', class: 'item' %></td>
+          <td class='input-area'>
+            <%= form.number_field :age, {value: params[:age], min: 0, class: 'item input'} %>
+            <% if (!(@user.nil?) && @user.errors.include?(:age) ) %>
+              <span class='err-msg'><%= @user.errors.full_messages_for(:age).first %></span>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+      <%= form.submit 'signup', class: 'submit-btn' %>
+    <% end %>
+  </div>
+</div>

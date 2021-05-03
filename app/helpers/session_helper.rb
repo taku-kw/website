@@ -2,6 +2,13 @@ module SessionHelper
   # 渡されたユーザーでログインする
   def log_in(user)
     session[:user_id] = user.id
+    session[:user_name] = user.name
+  end
+
+  # ゲストログイン
+  def guest_log_in
+    user = User.guest
+    log_in user
   end
 
   # 現在ログイン中のユーザーを返す (いる場合)
@@ -25,6 +32,7 @@ module SessionHelper
   # 現在のユーザーをログアウトする
   def log_out
     session.delete(:user_id)
+    session.delete(:user_name)
     @current_user = nil
   end
 end

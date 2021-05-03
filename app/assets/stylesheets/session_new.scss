@@ -2,7 +2,100 @@
 
 @import "./com.scss";
 
-.session_new {
-  height: calc(100vh - #{$header-height} - #{$footer-height}); 
+$title-area-height: 180px;
+$form-area-height: 500px;
+
+.session_new, .session_new_validate {
+  height: calc(100vh - #{$header-height} - #{$footer-height});
+  min-height: calc(#{$title-area-height} + #{$form-area-height});
   background-color: $main-color-light;
+
+  .title-area {
+    width: 100%;
+    height: $title-area-height;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+      font-size: 3.2rem;
+      letter-spacing: 1px;
+      border-bottom: 3px solid gray;
+    }
+  }
+
+  .form-area {
+    width: 100%;
+    height: $form-area-height;
+
+    display: flex;
+    justify-content: center;
+
+    .form {
+      width: 800px;
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      text-align: center;
+  
+      .form-table {
+        width: 100%;
+
+        .label-area {
+          width: 30%;
+          height: 100px;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: center;
+
+          background-color: hsl(210, 80%, 70%);
+          border: 1px solid gray;  
+        }
+        .input-area {
+          width: 70%;
+          height: 100px;
+          display: table-cell;
+          vertical-align: middle;
+          text-align: left;
+          position: relative;
+
+          background-color: hsl(210, 80%, 90%);
+          border: 1px solid gray;
+          .input {
+            height: 1.2em;
+            width: 90%;
+            background-color: white;
+            margin: 0px 5%;
+            padding: 0px 5px;
+            letter-spacing: 1px;
+          }
+          .err-msg {
+            position: absolute;
+            left: 40px;
+            top: 70px;
+            font-size: 1.6rem;
+            color: red;
+          }
+        }
+      }
+      .item {
+        width: 100%;
+        height: 100%;
+      }
+      .submit-btn {
+        margin-top: 30px;
+        margin-left: 100%;
+        transform: translateX(-100%);
+        display: inline-block;
+        width: 120px;
+        height: 30px;
+
+        background-color: hsl(210, 80%, 70%);
+        border: 1px solid gray;  
+        &:active {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
 }
